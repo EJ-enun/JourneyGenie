@@ -2,7 +2,7 @@ import streamlit as st
 from transformers import pipeline
 from google.cloud import aiplatform 
 import vertexai
-from vertexai.language_models import TextGenerationModel, ChatSession
+from vertexai.generative_models import GenerativeModel
 import pyperclip
 # Replace with your project ID and location
 PROJECT_ID = "visavoyage"
@@ -142,14 +142,11 @@ def streaming_prediction(project_id, location, prompt):
 
     vertexai.init(project=project_id, location=location)
 
-    text_model = TextGenerationModel.from_pretrained("text-t5-generative")
-    parameters = {
-        "temperature": 0.8,  # Temperature controls the degree of randomness in token selection.
-        "max_output_tokens": 256,  # Token limit determines the maximum amount of text output.
-    }
+    model = GenerativeModel(model_name="gemini-1.0-pro-002")
 
-    for response in responses:
-        return response
+    response = model.generate_content(prompt)
+
+    return resp.text
 
 def main():
     page_logo()
