@@ -100,11 +100,13 @@ def set_logo():
 def app():
     # Get the inputs from the user
     location = st.text_input("Which city are you applying from:")
-    destination = st.text_input("Which city you going to:")
+    destination = st.text_input("Which city/cities are you going to:")
+    dates = st.text_input("How many days will you be staying:")
     interests = st.text_input("What would you like to see and do:")
 
     if st.button("Create Itinerary"):
-        if location and destination and interests:
+        if location and destination and dates and interests:
+            days = dates.as_type(int)
             # Generate the itinerary
             #show_loading_gif()
             st.write(f"Country of Interest: {destination.capitalize()}")
