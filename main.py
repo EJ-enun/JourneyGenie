@@ -102,6 +102,7 @@ def app():
             st.title(f"Travel Itinerary for my Journey to {destination.capitalize()}")
             #itinerary = generate_itinerary(location, destination, interests)
             #st.write(itinerary)
+            st.title(f"About Visa applications for {destination.capitalize()}")
         else:
             #show_loading_gif()
             st.write("Please enter all the details")
