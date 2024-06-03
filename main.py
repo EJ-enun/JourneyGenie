@@ -86,16 +86,7 @@ def show_loading_gif():
     # Display the GIF in the Streamlit app
     st.markdown(f'<img src="data:image/gif;base64,{encoded_gif}" alt="gif">', unsafe_allow_html=True)
 
-
-
-def main():
-    page_logo()
-    set_background_color('#008080')
-    st.title("Visa Voyager")
-    set_logo()
-
-    
-
+def app():
     # Get the inputs from the user
     location = st.text_input("Enter your location")
     destination = st.text_input("Enter your destination")
@@ -105,11 +96,27 @@ def main():
         if location and destination and interests:
             # Generate the itinerary
             show_loading_gif()
+            st.write(f"Country of Interest: {destination}")
+            st.write(f"Country of Applicant: {location}")
+            st.write(f"List of all Embassies within {location}")
+            st.title(f"Travel Itinerary for my Journey to {Destination}")
             #itinerary = generate_itinerary(location, destination, interests)
             #st.write(itinerary)
         else:
             show_loading_gif()
             st.write("Please enter all the details")
+
+
+def main():
+    page_logo()
+    set_background_color('#008080')
+    st.title("Visa Voyager")
+    set_logo()
+    app()
+
+    
+
+    
 
 if __name__ == "__main__":
     main()
