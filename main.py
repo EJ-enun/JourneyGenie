@@ -70,7 +70,7 @@ def set_logo():
         return st.image(image, caption = 'Navigate the visa application process and chart your travel journey with ease.')
 
 
-def show_loading_gif():
+#def show_loading_gif():
     # URL of the GIF in the GitHub repo
     #gif_url = 'https://github.com/EJ-enun/visavoyager/main/loading.gif'
 
