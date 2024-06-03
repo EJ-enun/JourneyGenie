@@ -9,9 +9,29 @@ def generate_itinerary(location, destination, interests):
     input_text = f"Location: {location}, Destination: {destination}, Interests: {interests}"
     generated_text = model(input_text)[0]['generated_text']
     return generated_text
+    
+# Function to set background color
+def set_background_color(color):
+    background_color = f'''
+    <style>
+    .stApp {{
+        background-color: {color};
+    }}
+    </style>
+    '''
+    st.markdown(background_color, unsafe_allow_html=True)
+
+
+def add_image():
+    col_spacer, col_copy, col_push = st.columns([0.5, 0.3, 0.2])
+        with col_copy:
+            copy_to_clipboard = st.image(image, caption="Uploaded Image") #, use_column_width=True
 
 def main():
+    set_background_color('#40E0D0')
     st.title("Travel Itinerary Generator")
+
+    
 
     # Get the inputs from the user
     location = st.text_input("Enter your location")
