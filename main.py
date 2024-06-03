@@ -98,7 +98,7 @@ def app():
             #show_loading_gif()
             st.write(f"Country of Interest: {destination.capitalize()}")
             st.write(f"Country of Applicant: {location.capitalize()}")
-            st.write(f"List of all Embassies within {location.capitalize()}")
+            st.title(f"List of all {destination.capitalize()} Embassies within {destination.capitalize()}")
             st.title(f"Travel Itinerary for my Journey to {destination.capitalize()}")
             #itinerary = generate_itinerary(location, destination, interests)
             #st.write(itinerary)
