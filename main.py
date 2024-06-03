@@ -57,7 +57,7 @@ def set_background_color(color):
 #            return image
 
 def main():
-    set_background_color('#008080')
+    set_background_color('#FF7F50')
     st.title("Visa Voyager")
 
     
