@@ -103,7 +103,7 @@ def app():
             #itinerary = generate_itinerary(location, destination, interests)
             #st.write(itinerary)
             st.title(f"About Visa applications for {destination.capitalize()}")
-            text = st.text_input(f"Do you have any futher travel information questions about {destination.capitalize}")
+            text = st.text_input(f"Do you have any futher travel information questions about {destination.capitalize()}")
         else:
             #show_loading_gif()
             st.write("Please enter all the details")
