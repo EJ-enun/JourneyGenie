@@ -47,12 +47,12 @@ def set_background_color(color):
     st.markdown(background_color, unsafe_allow_html=True)
 
 #Function to add Image
-def add_image():
-    image = ""
-    col_spacer, col_copy, col_push = st.columns([0.5, 0.3, 0.2])
-        with col_copy:
-            image = st.image(image, caption="Uploaded Image") #, use_column_width=True
-            return image
+#def add_image():
+#    image = ""
+#    col_spacer, col_copy, col_push = st.columns([0.5, 0.3, 0.2])
+#        with col_copy:
+#            image = st.image(image, caption="Uploaded Image") #, use_column_width=True
+#            return image
 
 def main():
     set_background_color('#40E0D0')
