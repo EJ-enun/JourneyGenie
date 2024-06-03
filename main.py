@@ -106,7 +106,7 @@ def app():
 
     if st.button("Create Itinerary"):
         if location and destination and dates and interests:
-            days = dates.as_type(int)
+            days = int(dates)
             # Generate the itinerary
             #show_loading_gif()
             st.write(f"Country of Interest: {destination.capitalize()}")
