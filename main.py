@@ -29,7 +29,7 @@ def generate_itinerary(location, destination, interests):
     return generated_text
 
 
-Function to get chat response
+#Function to get chat response
 def get_chat_response(chat: ChatSession, prompt: str) -> str:
     response = chat.send_message(prompt)
     return response.text
