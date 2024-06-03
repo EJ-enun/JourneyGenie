@@ -36,6 +36,12 @@ def get_chat_response(chat: ChatSession, prompt: str) -> str:
     response = chat.send_message(prompt)
     return response.text
 
+def page_logo():
+    # Streamlit page configuration is set
+    st.set_page_config(
+        page_title="VisaVoyager",
+        page_icon= "https://raw.githubusercontent.com/EJ-enun/journeygenie/main/logo.png",)
+
     
 # Function to set background color
 def set_background_color(color):
@@ -64,7 +70,7 @@ def set_logo():
         return st.image(image, caption = 'Navigate the visa application process and chart your travel journey with ease.')
         
 def main():
-    
+    page_logo()
     set_background_color('#008080')
     st.title("Visa Voyager")
     set_logo()
