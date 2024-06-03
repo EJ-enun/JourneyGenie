@@ -68,7 +68,26 @@ def set_logo():
     col1, col2, col3 = st.columns([1,4,1])
     with col2:
         return st.image(image, caption = 'Navigate the visa application process and chart your travel journey with ease.')
-        
+
+
+def show_loading_gif():
+    # URL of the GIF in the GitHub repo
+    gif_url = 'https://github.com/EJ-enun/journeygenie/blob/main/loading.gif?raw=true'
+
+    # Send a GET request to the GitHub server to fetch the GIF
+    response = requests.get(gif_url)
+
+    # Read the content of the response
+    gif_data = response.content
+
+    # Encode the GIF data in base64
+    encoded_gif = base64.b64encode(gif_data).decode('utf-8-sig')
+
+    # Display the GIF in the Streamlit app
+    st.markdown(f'<img src="data:image/gif;base64,{encoded_gif}" alt="gif">', unsafe_allow_html=True)
+
+
+
 def main():
     page_logo()
     set_background_color('#008080')
