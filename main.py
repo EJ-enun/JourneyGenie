@@ -29,7 +29,7 @@ def add_image():
 
 def main():
     set_background_color('#40E0D0')
-    st.title("Travel Itinerary Generator")
+    st.title("Visa Voyager")
 
     
 
