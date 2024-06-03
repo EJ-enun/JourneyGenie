@@ -43,9 +43,9 @@ def generate_itinerary(location, destination, interests):
 
 
 #Function to get chat response
-def get_chat_response(chat: ChatSession, prompt: str) -> str:
-    response = chat.send_message(prompt)
-    return response.text
+#def get_chat_response(chat: ChatSession, prompt: str) -> str:
+#    response = chat.send_message(prompt)
+#    return response.text
 
 def page_logo():
     # Streamlit page configuration is set
