@@ -2,11 +2,11 @@ import streamlit as st
 from transformers import pipeline
 from google.cloud import aiplatform 
 import vertexai
-from vertexai.generative_models import GenerativeModel, ChatSession
+from vertexai.generative_models import TextGenerativeModel, ChatSession
 import pyperclip
 # Replace with your project ID and location
-PROJECT_ID = "your-project-id"
-LOCATION = "your-location"
+PROJECT_ID = "visavoyage"
+LOCATION = "us-central1"
 
 def copy(text):
     col_spacer, col_copy, col_push = st.columns([0.5, 0.3, 0.2])
@@ -99,30 +99,57 @@ def set_logo():
 
 def app():
     # Get the inputs from the user
-    location = st.text_input("Which city are you applying from:")
+    source = st.text_input("Which city are you applying from:")
     destination = st.text_input("Which city/cities are you going to:")
     dates = st.text_input("How many days will you be staying:")
     interests = st.text_input("What would you like to see and do:")
 
     if st.button("Create Itinerary"):
-        if location and destination and dates and interests:
+        if source and destination and dates and interests:
             days = int(dates)
             # Generate the itinerary
             #show_loading_gif()
-            st.write(f"Country of Interest: {destination.capitalize()}")
-            st.write(f"Country of Applicant: {location.capitalize()}")
-            st.title(f"List of all {destination.capitalize()} Embassies within {location.capitalize()}")
+            st.write(f"City of Interest: {destination.capitalize()}")
+            st.write(f"City of Applicant: {source.capitalize()}")
+            #st.title(f"List of all {destination.capitalize()} Embassies within {source.capitalize()}")
+
+            #Travel information is populated here.
             st.title(f"Travel Itinerary for my Journey to {destination.capitalize()}")
-            #itinerary = generate_itinerary(location, destination, interests)
-            #st.write(itinerary)
+            t_prompt = f"Create a {days}-day Travel itinerary for a visa application to {destination}, listing daily activities based on these interests {interests}. Write in first person.”"
+            itinerary = streaming_prediction(PROJECT_ID, LOCATION, t_prompt)
+            st.write(itinerary)
+
+            #Visa Information is populated here.
             st.title(f"About Visa applications for {destination.capitalize()}")
+            v_prompt = f"create a detailed and comprehensive step by step breakdown of the process of applying to {destination} city and embassies in the country where {source} is located."
+            visa_info = streaming_prediction(PROJECT_ID, LOCATION, v_prompt)
+            st.write(visa_info)
+
+            #Ask other questions you may have.
             text = st.text_input(f"Do you have any other questions about visa applications to {destination.capitalize()} ?")
-            copy(text)
-            st.write("This is what we live for.")
+            if st.button("Chat"):
+                response = streaming_prediction(PROJECT_ID, LOCATION, text)
+                st.write(response)
+            
         else:
+            
             #show_loading_gif()
             st.write("Please enter all the details")
 
+
+def streaming_prediction(project_id, location, prompt):
+    #Initialize VertexAI
+
+    vertexai.init(project=project_id, location=location)
+
+    text_model = TextGenerationModel.from_pretrained("text-t5-generative")
+    parameters = {
+        "temperature": 0.8,  # Temperature controls the degree of randomness in token selection.
+        "max_output_tokens": 256,  # Token limit determines the maximum amount of text output.
+    }
+
+    for response in responses:
+        return response
 
 def main():
     page_logo()
