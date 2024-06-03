@@ -108,6 +108,7 @@ def main():
             #itinerary = generate_itinerary(location, destination, interests)
             #st.write(itinerary)
         else:
+            show_loading_gif()
             st.write("Please enter all the details")
 
 if __name__ == "__main__":
