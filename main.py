@@ -56,6 +56,13 @@ def set_background_color(color):
 #            image = st.image(image, caption="Uploaded Image") #, use_column_width=True
 #            return image
 
+# Function to set logo
+def set_logo():
+    htp = "https://raw.githubusercontent.com/EJ-enun/weatherfashion/main/logo.png"
+    col1, col2, col3 = st.columns([1,6,1])
+    with col2:
+        return st.image(htp, caption='Dress for the Weather, Impress with Style.')
+        
 def main():
     set_background_color('#008080')
     st.title("Visa Voyager")
