@@ -25,7 +25,7 @@ def generate_itinerary(location, destination, interests):
     #generated_text = model(input_text)[0]['generated_text']
 
     prompt = "Hello."
-    generated_text = get_chat_response(chat, prompt))
+    generated_text = get_chat_response(chat, prompt)
     return generated_text
 
 
