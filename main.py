@@ -96,10 +96,10 @@ def app():
         if location and destination and interests:
             # Generate the itinerary
             #show_loading_gif()
-            st.write(f"Country of Interest: {destination}")
-            st.write(f"Country of Applicant: {location}")
-            st.write(f"List of all Embassies within {location}")
-            st.title(f"Travel Itinerary for my Journey to {Destination}")
+            st.write(f"Country of Interest: {destination.capitalize()}")
+            st.write(f"Country of Applicant: {location.capitalize()}")
+            st.write(f"List of all Embassies within {location.capitalize()}")
+            st.title(f"Travel Itinerary for my Journey to {destination.capitalize()}")
             #itinerary = generate_itinerary(location, destination, interests)
             #st.write(itinerary)
         else:
