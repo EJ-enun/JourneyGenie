@@ -64,6 +64,7 @@ def set_logo():
         return st.image(htp, caption='Dress for the Weather, Impress with Style.')
         
 def main():
+    set_logo()
     set_background_color('#008080')
     st.title("Visa Voyager")
 
