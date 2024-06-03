@@ -105,7 +105,7 @@ def app():
             st.title(f"About Visa applications for {destination.capitalize()}")
             text = st.text_input(f"Do you have any other questions about visa applications to {destination.capitalize()} ?")
             if st.button("Ask"):
-                if (text):
+                if text:
                     st.write("This is what we live for.")
         else:
             #show_loading_gif()
