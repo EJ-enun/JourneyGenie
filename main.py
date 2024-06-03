@@ -92,7 +92,7 @@ def app():
     destination = st.text_input("Enter your destination")
     interests = st.text_input("Enter your interests")
 
-    if st.button("Generate Itinerary"):
+    if st.button("Create Itinerary"):
         if location and destination and interests:
             # Generate the itinerary
             #show_loading_gif()
@@ -104,6 +104,9 @@ def app():
             #st.write(itinerary)
             st.title(f"About Visa applications for {destination.capitalize()}")
             text = st.text_input(f"Do you have any other questions about visa applications to {destination.capitalize()} ?")
+            if st.button("Ask"):
+                if (text):
+                    st.write("This is what we live for.")
         else:
             #show_loading_gif()
             st.write("Please enter all the details")
