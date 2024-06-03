@@ -1,10 +1,11 @@
 import streamlit as st
 from transformers import pipeline
-import vertexai
+from google.cloud import vertexai as vertexai
 from vertexai.generative_models import GenerativeModel, ChatSession
 
-# TODO(developer): Update and un-comment below lines
-# project_id = "PROJECT_ID"
+# Replace with your project ID and location
+PROJECT_ID = "your-project-id"
+LOCATION = "your-location"
 
 
 # Initialize the HuggingFace model
