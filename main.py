@@ -64,7 +64,7 @@ def set_background_color(color):
 
 # Function to set logo
 def set_logo():
-    image = "https://raw.githubusercontent.com/EJ-enun/journeygenie/main/logo.png"
+    image = "https://raw.githubusercontent.com/EJ-enun/visavoyager/main/logo.png"
     col1, col2, col3 = st.columns([1,4,1])
     with col2:
         return st.image(image, caption = 'Navigate the visa application process and chart your travel journey with ease.')
@@ -72,7 +72,7 @@ def set_logo():
 
 def show_loading_gif():
     # URL of the GIF in the GitHub repo
-    gif_url = 'https://github.com/EJ-enun/journeygenie/main/loading.gif'
+    gif_url = 'https://github.com/EJ-enun/visavoyager/main/loading.gif'
 
     # Send a GET request to the GitHub server to fetch the GIF
     response = requests.get(gif_url)
