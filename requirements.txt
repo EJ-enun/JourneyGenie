@@ -3,3 +3,4 @@ streamlit
 google-cloud-aiplatform
 requests
 pyperclip
+gcloud auth application-default login
