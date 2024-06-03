@@ -1,7 +1,6 @@
 import streamlit as st
 from transformers import pipeline
-from google.cloud import aiplatform
-from aiplatform import vertexai
+from google.cloud import vertexai
 from vertexai.generative_models import GenerativeModel, ChatSession
 
 # Replace with your project ID and location
