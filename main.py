@@ -72,19 +72,19 @@ def set_logo():
 
 def show_loading_gif():
     # URL of the GIF in the GitHub repo
-    gif_url = 'https://github.com/EJ-enun/visavoyager/main/loading.gif'
+    #gif_url = 'https://github.com/EJ-enun/visavoyager/main/loading.gif'
 
     # Send a GET request to the GitHub server to fetch the GIF
-    response = requests.get(gif_url)
+    #response = requests.get(gif_url)
 
     # Read the content of the response
-    gif_data = response.content
+    #gif_data = response.content
 
     # Encode the GIF data in base64
-    encoded_gif = base64.b64encode(gif_data).decode('utf-8-sig')
+    #encoded_gif = base64.b64encode(gif_data).decode('utf-8-sig')
 
     # Display the GIF in the Streamlit app
-    st.markdown(f'<img src="data:image/gif;base64,{encoded_gif}" alt="gif">', unsafe_allow_html=True)
+    #st.markdown(f'<img src="data:image/gif;base64,{encoded_gif}" alt="gif">', unsafe_allow_html=True)
 
 def app():
     # Get the inputs from the user
