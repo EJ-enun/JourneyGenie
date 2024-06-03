@@ -95,7 +95,7 @@ def app():
     if st.button("Generate Itinerary"):
         if location and destination and interests:
             # Generate the itinerary
-            show_loading_gif()
+            #show_loading_gif()
             st.write(f"Country of Interest: {destination}")
             st.write(f"Country of Applicant: {location}")
             st.write(f"List of all Embassies within {location}")
@@ -103,7 +103,7 @@ def app():
             #itinerary = generate_itinerary(location, destination, interests)
             #st.write(itinerary)
         else:
-            show_loading_gif()
+            #show_loading_gif()
             st.write("Please enter all the details")
 
 
