@@ -104,8 +104,9 @@ def main():
     if st.button("Generate Itinerary"):
         if location and destination and interests:
             # Generate the itinerary
-            itinerary = generate_itinerary(location, destination, interests)
-            st.write(itinerary)
+            show_loading_gif()
+            #itinerary = generate_itinerary(location, destination, interests)
+            #st.write(itinerary)
         else:
             st.write("Please enter all the details")
 
