@@ -140,13 +140,16 @@ def app():
 def streaming_prediction(project_id, location, prompt):
     #Initialize VertexAI
 
-    vertexai.init(project=project_id, location=location)
-
-    model = GenerativeModel(model_name="gemini-1.0-pro-002")
-
-    response = model.generate_content(prompt)
-
-    return resp.text
+    vertexai.init(project="visavoyage", location="us-central1")
+    parameters = {
+    "candidate_count": 1,
+    "max_output_tokens": 64,
+    "temperature": 1,
+    "top_k": 40
+}
+    model = TextGenerationModel.from_pretrained("text-unicorn@001")
+    response = model.predict(prompt, **parameters)
+    return response.text
 
 def main():
     page_logo()
