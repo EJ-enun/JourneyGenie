@@ -72,7 +72,7 @@ def set_logo():
 
 def show_loading_gif():
     # URL of the GIF in the GitHub repo
-    gif_url = 'https://github.com/EJ-enun/journeygenie/blob/main/loading.gif?raw=true'
+    gif_url = 'https://github.com/EJ-enun/journeygenie/main/loading.gif'
 
     # Send a GET request to the GitHub server to fetch the GIF
     response = requests.get(gif_url)
