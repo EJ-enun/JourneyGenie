@@ -3,11 +3,22 @@ from transformers import pipeline
 from google.cloud import aiplatform 
 import vertexai
 from vertexai.generative_models import GenerativeModel, ChatSession
-
+import pyperclip
 # Replace with your project ID and location
 PROJECT_ID = "your-project-id"
 LOCATION = "your-location"
 
+def copy(text):
+    col_spacer, col_copy, col_push = st.columns([0.5, 0.3, 0.2])
+    with col_copy:
+            copy_to_clipboard = st.button(label="Copy to clipboard :clipboard:")
+            if copy_to_clipboard:
+                try:
+                    pyperclip.copy(text)
+                except pyperclip.PyperclipException:
+                    st.warning("Error: Copying currently not working")
+
+  
 
 # Initialize the HuggingFace model
 #model = pipeline('text-generation', model='your-huggingface-model')
@@ -104,9 +115,8 @@ def app():
             #st.write(itinerary)
             st.title(f"About Visa applications for {destination.capitalize()}")
             text = st.text_input(f"Do you have any other questions about visa applications to {destination.capitalize()} ?")
-            if st.button("Ask"):
-                if text:
-                    st.write("This is what we live for.")
+            copy(text)
+            st.write("This is what we live for.")
         else:
             #show_loading_gif()
             st.write("Please enter all the details")
