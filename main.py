@@ -99,9 +99,9 @@ def set_logo():
 
 def app():
     # Get the inputs from the user
-    location = st.text_input("Enter your location")
-    destination = st.text_input("Enter your destination")
-    interests = st.text_input("Enter your interests")
+    location = st.text_input("Which city are you applying from:")
+    destination = st.text_input("Which city you going to:")
+    interests = st.text_input("What would you like to see and do:")
 
     if st.button("Create Itinerary"):
         if location and destination and interests:
