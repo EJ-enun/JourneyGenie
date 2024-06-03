@@ -1,3 +1,4 @@
 transformers
 streamlit
 google-cloud-aiplatform
+requests
