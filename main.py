@@ -58,7 +58,7 @@ def set_background_color(color):
 
 # Function to set logo
 def set_logo():
-    htp = "https://raw.githubusercontent.com/EJ-enun/weatherfashion/main/logo.png"
+    htp = "https://raw.githubusercontent.com/EJ-enun/journeygenie/main/logo.png"
     col1, col2, col3 = st.columns([1,6,1])
     with col2:
         return st.image(htp, caption='Dress for the Weather, Impress with Style.')
