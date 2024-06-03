@@ -61,7 +61,8 @@ def set_logo():
     htp = "https://raw.githubusercontent.com/EJ-enun/journeygenie/main/logo.png"
     col1, col2, col3 = st.columns([1,6,1])
     with col2:
-        return st.image(htp, caption='Dress for the Weather, Impress with Style.')
+        return st.image(htp, caption='Navigate the visa application process and chart your travel journey with ease.
+')
         
 def main():
     
