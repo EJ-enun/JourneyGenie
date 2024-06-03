@@ -10,7 +10,7 @@ LOCATION = "your-location"
 
 
 # Initialize the HuggingFace model
-model = pipeline('text-generation', model='your-huggingface-model')
+#model = pipeline('text-generation', model='your-huggingface-model')
 
 def generate_itinerary(location, destination, interests):
     #Import vertex ai
