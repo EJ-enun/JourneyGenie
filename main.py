@@ -138,18 +138,18 @@ def app():
 
 
 def streaming_prediction(project_id, location, prompt):
-    #Initialize VertexAI
-
-    vertexai.init(project="visavoyage", location="us-central1")
-    parameters = {
-    "candidate_count": 1,
-    "max_output_tokens": 64,
-    "temperature": 1,
-    "top_k": 40
-}
-    model = TextGenerationModel.from_pretrained("text-unicorn@001")
-    response = model.predict(prompt, **parameters)
-    return response.text
+  """Sends a prompt to the Vertex AI endpoint and returns the generated text."""
+  # Initialize VertexAI
+  vertexai.init(project=project_id, location=location)
+  parameters = {
+      "candidate_count": 1,  # Number of candidate responses
+      "max_output_tokens": 64,  # Maximum length of generated text
+      "temperature": 1,  # Controls randomness (higher = more creative)
+      "top_k": 40,  # Top k most likely words to consider at each step
+  }
+  model = TextGenerationModel.from_pretrained("visavoyage")  # Replace with your model name
+  response = model.predict(prompt, **parameters)
+  return response.text
 
 def main():
     page_logo()
